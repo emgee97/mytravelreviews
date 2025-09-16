@@ -1,2 +1,21 @@
-# mytravelreviews
-A responsive travel review web app built with HTML, CSS, and JavaScript. It showcases destinations with images, titles, descriptions, star ratings, and a thumbnail carousel. Features include dynamic ordinal numbers, a dark overlay on backgrounds, and smooth transitions for an engaging user experience.
+# My Travel Reviews
+
+A simple web project showcasing my travel reviews with HTML, CSS, and JavaScript.  
+Each destination has an image, country, title, description, and rating.
+
+## Features
+- Responsive design (titles, thumbnails, buttons adapt to screen size)
+- Image background with dark overlay
+- Thumbnail carousel with next button
+- Dynamic ordinal number display
+- Star ratings for each destination
+
+## How to run
+1. Clone the repository:  
+   `git clone https://github.com/emgee97/mytravelreviews.git`
+2. Open `index.html` in your browser
+
+## Technologies used
+- HTML5
+- CSS3
+- JavaScript (vanilla)
