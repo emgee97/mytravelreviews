@@ -19,3 +19,8 @@ Each destination has an image, country, title, description, and rating.
 - HTML5
 - CSS3
 - JavaScript (vanilla)
+
+🔗 Live Demo
+
+You can view the live version of the project here:
+👉 https://mytravelreviews.maximeguillaumin.com/
