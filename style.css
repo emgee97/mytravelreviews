@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f6f6f6;
+}
+
+button {
+  font-family: "Bebas Neue", sans-serif;
+  background-color: transparent;
+  border: 1px solid white;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  height: 50px;
+  transition: 0.5s ease;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #767676;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #ffffff;
+}
+
+.container .content {
+  width: 100%;
+  display: flex;
+}
+
+.container .introduce {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  z-index: 20;
+}
+
+.introduce .wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  padding: 0 25px 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.introduce .wrapper span {
+  overflow: hidden;
+}
+
+.introduce .wrapper span > * {
+  transition: 0.5s ease;
+  opacity: 0;
+  transform: translateY(300px);
+  transition-delay: calc((3 - var(--idx)) * 0.1s);
+}
+
+.introduce .wrapper.active {
+  pointer-events: all;
+}
+
+.introduce .wrapper.active span > * {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--idx) * 0.1s);
+}
+
+.introduce:not(.title) {
+  font-family: "Montserrat", sans-serif;
+}
+.introduce .country {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.introduce .title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 5.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.introduce .description {
+  font-size: 1rem;
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+.introduce .discover-button {
+  display: inline-block; /* Makes the <a> behave like a button */
+  text-decoration: none; /* Removes the underline */
+  color: white; /* Sets the text color to white */
+  background-color: transparent; /* Keeps the background transparent */
+  border: 1px solid white; /* Adds a white border */
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 250px;
+  height: 50px;
+  line-height: 50px; /* Centers the text vertically */
+  text-align: center; /* Centers the text horizontally */
+  border-radius: 50px;
+  transition: 0.5s ease;
+}
+
+.introduce .discover-button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.4); /* Adds a hover effect */
+}
+
+/* --- Mode tablette --- */
+@media (max-width: 1024px) {
+  .introduce .discover-button {
+    width: 200px;   /* réduit la largeur */
+    height: 45px;   /* réduit la hauteur */
+    font-size: 0.9rem;
+    line-height: 45px; /* ajuste le centrage vertical du texte */
+  }
+}
+
+/* --- Mode mobile --- */
+@media (max-width: 600px) {
+  .introduce .discover-button {
+    width: 100px;
+    height: 40px;
+    font-size: 0.8rem;
+    line-height: 40px;
+  }
+}
+
+
+.content .thumbnail-list {
+  position: relative;
+  height: 300px;
+  width: 60%;
+}
+
+.thumbnail-list .wrapper {
+  position: relative;
+  z-index: 10;
+  height: 300px;
+}
+
+.thumbnail-list .wrapper .thumbnail {
+  position: absolute;
+  height: 300px;
+  width: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+  transform: translateX(calc(var(--idx) * 230px));
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.thumbnail-list .wrapper .thumbnail .zoom {
+  width: 1280px;
+  height: 720px;
+  transform: translate(-512px, -270px);
+  filter: brightness(40%);
+  box-shadow: none;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .navigation {
+  margin-left: 40%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 50px 50px 0;
+  z-index: 20;
+}
+
+
+.navigation .next-button {
+  width: 180px;
+  border-radius: 50px;
+}
+
+.navigation .line {
+  flex: 1;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.navigation .ordinal-number {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack numbers vertically */
+  justify-content: center; /* Center the numbers horizontally */
+  align-items: center; /* Center the numbers vertically */
+  width: 80px; /* Adjusted to fit the font size */
+  height: 80px; /* Adjusted to fit the font size */
+  overflow: hidden; /* Hide numbers outside the container */
+  margin: 0 auto; /* Center the container itself */
+}
+
+.ordinal-number {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.ordinal-number h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  position: absolute;         /* superposés */
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translateY(200%);
+  transition: transform 0.5s ease;
+  opacity: 0;
+}
+
+.ordinal-number h2.active {
+  transform: translateY(0);   /* seul l’actif descend */
+  opacity: 1;
+}
+
+.stars {
+  font-size: 1.2rem;
+  color: gold;
+}
+
+/* --- Mode tablette --- */
+@media (max-width: 1024px) {
+  .stars {
+    font-size: 1rem;
+  }
+}
+
+/* --- Mode mobile --- */
+@media (max-width: 600px) {
+  .stars {
+    font-size: 0.8rem;
+  }
+}
+
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* voile noir semi-transparent pour assombrir */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- Mode tablette --- */
+@media (max-width: 1024px) {
+  .introduce .title {
+    font-size: 3rem; /* réduit depuis 5.5rem */
+  }
+
+  .introduce .country {
+    font-size: 1.2rem;
+  }
+
+  .introduce .description {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Mode mobile --- */
+@media (max-width: 600px) {
+  .introduce .title {
+    font-size: 1.5rem; /* encore plus petit */
+  }
+
+  .introduce .country {
+    font-size: 1rem;
+  }
+
+  .introduce .description {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* --- Mode tablette & mobile --- */
+@media (max-width: 1024px) {
+  .container .content {
+    flex-direction: row; /* on garde l’affichage en ligne */
+    flex-wrap: wrap;     /* permet de passer à la ligne si besoin */
+  }
+
+  .container .introduce,
+  .content .thumbnail-list {
+    width: 50%;  /* chaque colonne prend 50% */
+    height: auto; /* la hauteur s’adapte au contenu */
+  }
+}
