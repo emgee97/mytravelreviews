@@ -56,6 +56,14 @@ var data = [
       "Rhodes, a Greek island, is famous for its ancient ruins, beautiful beaches, and charming old town. It offers a perfect blend of history, culture, and relaxation for visitors.",
     rating: 5,
   },
+  {
+    img: "./images/Rome.jpg",
+    country: "Roma - Italy",
+    title: "Eternal City Escape",
+    description:
+      "Rome, Italy’s capital, is steeped in history, where ancient ruins meet vibrant street life. With endless landmarks to explore, a single weekend is never enough to see it all.",
+    rating: 5,
+  },
 ];
 
 // DOM elements
