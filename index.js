@@ -11,7 +11,7 @@ var data = [
   {
     img: "./images/Berlin.jpg",
     country: "Berlin - Germany",
-    title: "A City of Contrasts",
+    title: "I'm a Berliner",
     description:
       "Berlin, the capital of Germany, is a city rich in history and culture. It is known for its vibrant arts scene, diverse neighborhoods, and significant historical landmarks such as the Berlin Wall.",
     rating: 5,
